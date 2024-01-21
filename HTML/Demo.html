@@ -1,44 +1,32 @@
 <!DOCTYPE html>
 <html>
-<!-- Tran Thi Kim Dung 2021050135
-    Bạn có thể thay đổi màu trạng thái liên kết bằng cách sử dụng CSS
- -->
+<!-- Một liên kết cũng có thể được tạo kiểu như một nút bằng cách sử dụng CSS
+     Tran Thi Kim Dung 2021050135 -->
 
 <head>
     <style>
-        a:link {
-            color: green;
-            background-color: transparent;
-            text-decoration: none;
-        }
-        
+        a:link,
         a:visited {
-            color: pink;
-            background-color: transparent;
+            background-color: #f44336;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
             text-decoration: none;
+            display: inline-block;
         }
         
-        a:hover {
-            color: red;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-        
+        a:hover,
         a:active {
-            color: yellow;
-            background-color: transparent;
-            text-decoration: underline;
+            background-color: red;
         }
     </style>
 </head>
 
 <body>
 
-    <h2>Link Colors</h2>
-
-    <p>You can change the default colors of links</p>
-
-    <a href="html_images.asp" target="_blank">HTML Images</a>
+    <h2>Link Button</h2>
+    <p>A link styled as a button:</p>
+    <a href="default.asp" target="_blank">This is a link</a>
 
 </body>
 
