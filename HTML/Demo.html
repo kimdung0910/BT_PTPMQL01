@@ -3,14 +3,18 @@
 
 <body>
 
-    <h2>Remove the Iframe Border</h2>
-    <p>To remove the default border of the iframe, use CSS:</p>
+    <h2>Use JavaScript to Change Text</h2>
+    <p>This example writes "Hello JavaScript!" into an HTML element with id="demo":</p>
 
-    <iframe src="demo_iframe.htm" style="border:none;" title="Iframe Example"></iframe>
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    </script>
 
 </body>
 
 </html>
-<!-- Theo mặc định, iframe có đường viền xung quanh nó.
-Để xóa đường viền, hãy thêm stylet huộc tính và sử dụng thuộc tính CSS border:
+<!-- Thẻ HTML <script>được sử dụng để xác định tập lệnh phía máy khách (JavaScript).
+Phần <script>tử này chứa các câu lệnh tập lệnh hoặc nó trỏ đến tệp tập lệnh bên ngoài thông qua srct huộc tính.
 Tran Thi Kim Dung 2021050135 -->
