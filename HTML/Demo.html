@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
-<!-- Canvas là một vùng hình chữ nhật trên trang HTML. Theo mặc định, canvas không có đường viền và không có nội dung.
-     Tran Thi Kim Dung 2021050135 -->
+<!-- Tran Thi Kim Dung 2021050135 -->
 
 <body>
 
-    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-Your browser does not support the HTML canvas tag.
-</canvas>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(200, 100);
+        ctx.stroke();
+    </script>
 
 </body>
 
