@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
-<!-- <input type="text">xác định trường nhập văn bản một dòng :
-     Tran Thi Kim Dung 2021050135 -->
 
 <body>
 
-    <h2>Text field</h2>
-    <p>The <strong>input type="text"</strong> defines a one-line text input field:</p>
+    <h1>The input formaction attribute</h1>
+
+    <p>The formaction attribute specifies the URL of a file that will process the input when the form is submitted.</p>
 
     <form action="/action_page.php">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last name:</label><br>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
         <input type="text" id="lname" name="lname"><br><br>
         <input type="submit" value="Submit">
+        <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
     </form>
 
-    <p>Note that the form itself is not visible.</p>
-    <p>Also note that the default width of a text field is 20 characters.</p>
-
 </body>
+<!-- Thuộc tính đầu vào formactionchỉ định URL của tệp sẽ xử lý đầu vào khi biểu mẫu được gửi
+     Thuộc tính này ghi đè thuộc actiontính của <form>phần tử.
+    Thuộc tính này formactionhoạt động với các loại đầu vào sau: gửi và hình ảnh.
+Tran Thi Kim Dung 2021050135-->
+
+</html>
 
 </html>
