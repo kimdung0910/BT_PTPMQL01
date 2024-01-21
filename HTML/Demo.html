@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
-<!-- One of the most used form elements is the <input> element.
-The <input> element can be displayed in several ways, depending on the type attribute. 
-Tran Thi Kim Dung 2021050135-->
+<!-- <input type="text">xác định trường nhập văn bản một dòng :
+     Tran Thi Kim Dung 2021050135 -->
 
 <body>
 
-    <h2>The input Element</h2>
+    <h2>Text field</h2>
+    <p>The <strong>input type="text"</strong> defines a one-line text input field:</p>
 
     <form action="/action_page.php">
         <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname"><br><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
         <input type="submit" value="Submit">
     </form>
+
+    <p>Note that the form itself is not visible.</p>
+    <p>Also note that the default width of a text field is 20 characters.</p>
 
 </body>
 
