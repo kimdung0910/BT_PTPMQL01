@@ -3,18 +3,18 @@
 
 <body>
 
-    <h2>Use JavaScript to Change Text</h2>
-    <p>This example writes "Hello JavaScript!" into an HTML element with id="demo":</p>
-
     <p id="demo"></p>
 
     <script>
         document.getElementById("demo").innerHTML = "Hello JavaScript!";
     </script>
 
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+    <p>A browser without support for JavaScript will show the text written inside the noscript element.</p>
+
 </body>
 
 </html>
-<!-- Thẻ HTML <script>được sử dụng để xác định tập lệnh phía máy khách (JavaScript).
-Phần <script>tử này chứa các câu lệnh tập lệnh hoặc nó trỏ đến tệp tập lệnh bên ngoài thông qua srct huộc tính.
-Tran Thi Kim Dung 2021050135 -->
+<!-- Thẻ HTML <noscript>xác định nội dung thay thế sẽ được hiển thị cho người dùng đã tắt tập lệnh trong trình duyệt của họ hoặc có trình duyệt không hỗ trợ tập lệnh: 
+    Tran Thi Kim Dung 2021050135-->
