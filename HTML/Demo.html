@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
+<!-- Di chuột qua phần tử <div> để hiển thị phần tử <p> (như chú giải công cụ)
+     Tran Thi Kim Dung 2021050135 -->
 
 <head>
     <style>
-        div {
-            background-color: green;
-            color: white;
-            padding: 25px;
-            text-align: center;
+        p {
+            display: none;
+            background-color: yellow;
+            padding: 20px;
         }
         
-        div:hover {
-            background-color: blue;
+        div:hover p {
+            display: block;
         }
     </style>
 </head>
 
 <body>
-    <!-- Tran Thi Kim Dung 2021050135 -->
-    <p>Mouse over the div element below to change its background color:</p>
 
-    <div>Mouse Over Me</div>
+    <div>Hover over this div element to show the p element
+        <p>Tada! Here I am!</p>
+    </div>
 
 </body>
 
