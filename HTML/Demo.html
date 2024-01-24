@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
+<!-- Tran Thi Kim Dung 2021050135 -->
 
 <head>
     <style>
-        #div1 {
-            background-color: yellow;
-            height: 100px;
-            width: max(50%, 300px);
+        body {
+            counter-reset: section;
+        }
+        
+        h1 {
+            counter-reset: subsection;
+        }
+        
+        h1::before {
+            counter-increment: section;
+            content: "Section " counter(section) ". ";
+        }
+        
+        h2::before {
+            counter-increment: subsection;
+            content: counter(section) "." counter(subsection) " ";
         }
     </style>
 </head>
 
 <body>
 
-    <h1>The max() Function</h1>
 
-    <p>Use max() to set the width of #div1 to whichever value is largest, 50% or 300px:</p>
+    <h1>HTML/CSS Tutorials</h1>
+    <h2>HTML</h2>
+    <h2>CSS</h2>
+    <h2>Bootstrap</h2>
+    <h2>W3.CSS</h2>
 
-    <div id="div1">Some text...</div>
+    <h1>Scripting Tutorials</h1>
+    <h2>JavaScript</h2>
+    <h2>jQuery</h2>
+    <h2>React</h2>
 
-    <p>Resize the browser window to see the effect.</p>
+    <h1>Programming Tutorials</h1>
+    <h2>Python</h2>
+    <h2>Java</h2>
+    <h2>C++</h2>
 
 </body>
-<!-- Tran Thi Kim Dung 2021050135 -->
 
 </html>
