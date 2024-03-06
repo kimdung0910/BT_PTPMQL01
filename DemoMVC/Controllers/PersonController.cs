@@ -1,5 +1,5 @@
-using DemoMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using DemoMVC.Models;
 
 namespace DemoMVC.Controllers
 {
@@ -7,14 +7,14 @@ namespace DemoMVC.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new Person()); 
         }
+
         [HttpPost]
-        public IActionResult Index(Person ps)
+        public IActionResult Index(Person person)
         {
-            string strResult = ps.FullName + "-" + ps.PersonID;
-            ViewBag.thongbao = strResult;
-            return View();
+            ViewBag.thongBao = "Sinh vien " + person.FullName + " o " + person.Address +  " "+  person.Age + " tuoi"; 
+            return View(person); 
         }
     }
 }

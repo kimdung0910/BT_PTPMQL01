@@ -1,7 +1,13 @@
-<form asp-action="Index">
-<input type="text"name ="PersonID" placeholder="Nhap CCCD">
-<input type="text" name="FullName" placeholder="Nhap ho va ten">
-<input type="submit" value="Gui du lieu">
+@model DemoMVC.Models.Person
+
+<form asp-action="Index" method="post">
+    <label>Nhap vao ho ten: </label>
+    <input type="text" asp-for="FullName" placeholder="Nhap ho ten"> </br> </br>
+    <label>Nhap dia chi:</label>
+    <input type="text" asp-for="Address" placeholder="Nhap dia chi"> <br><br>
+    <label>Nhap tuoi:</label>
+    <input type="text" asp-for="Age" placeholder="Nhap tuoi"> <br><br>
+    <button type="submit">Send</button>
+    <h1>@ViewBag.thongBao</h1>
+    <h2>Tran Thi Kim Dung - 2021050135</h2>
 </form>
-<h1>@ViewBag.thongbao</h1>
-//Tran Thi Kim Dung-2021050135
