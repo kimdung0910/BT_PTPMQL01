@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 namespace DemoMVC.Controllers
 {
+//Tran Thi Kim Dung - 2021050135
     public class DemoController : Controller
     {
         public IActionResult Index()
@@ -9,9 +10,9 @@ namespace DemoMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string a)
+        public IActionResult Index(string hoTen, int tuoi)
         {
-             string strResult = "Du lieu vua nhap la " + a;
+             string strResult = "Sinh vien " + hoTen + " " + tuoi + " tuoi";
             ViewBag.thongBao = strResult; 
             return View(); 
         }
