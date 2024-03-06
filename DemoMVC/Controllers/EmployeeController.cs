@@ -15,7 +15,7 @@ namespace DemoMVC.Controllers
         public IActionResult Index(Employee employee)
         {
             
-            ViewBag.Message = "Thông tin nhân viên: " + employee.EmployeeName + " tuoi " + employee.Age + " muc luong " + employee.Salary;
+            ViewBag.Message = "Thông tin nhân viên: " + employee.EmployeeId + " tuoi " + employee.Age;
             return View(employee);
         }
     }

@@ -14,7 +14,7 @@ namespace DemoMVC.Controllers
         public IActionResult Index(Student student)
         {
            
-            ViewBag.Message = "Thông tin sinh viên: " + student.FullName;
+            ViewBag.Message = "Thông tin sinh viên: " + student.StudentId;
             return View(student);
         }
     }
