@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 namespace DemoMVC.Controllers
 {
-//Tran Thi Kim Dung - 2021050135
     public class DemoController : Controller
     {
         public IActionResult Index()
@@ -10,11 +9,23 @@ namespace DemoMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string hoTen, int tuoi)
+        public IActionResult Index(int number1, int number2)
         {
-             string strResult = "Sinh vien " + hoTen + " " + tuoi + " tuoi";
-            ViewBag.thongBao = strResult; 
+              // Tính hiệu 2 số
+            int difference = number1 - number2;
+            ViewBag.differenceResult = $"Hiệu của {number1} và {number2} là {difference}";
+
+            // Tính tích 2 số
+            int product = number1 * number2;
+            ViewBag.productResult = $"Tích của {number1} và {number2} là {product}";
+
+            // Thực hiện phép chia lấy nguyên và lấy dư 2 số
+            int quotient = number1 / number2;
+            int remainder = number1 % number2;
+            ViewBag.quotientResult = $"Phép chia lấy nguyên của {number1} và {number2} là {quotient}";
+            ViewBag.remainderResult = $"Phép chia lấy dư của {number1} và {number2} là {remainder}";
             return View(); 
         }
     }
 }
+//Tran Thi Kim Dung - 2021050135

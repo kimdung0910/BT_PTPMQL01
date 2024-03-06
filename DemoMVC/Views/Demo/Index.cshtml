@@ -1,10 +1,12 @@
-<form asp-action="Index">
-//Tran Thi Kim Dung - 2021050135    
-     <label>Nhap vao ho ten: </label>
-    <input type="text" placeholder="Nhap ho ten" name="hoTen"> </br> </br>
-    <label>Nhap tuoi:</label>
-    <input type="text" placehoder="Nhap so tuoi" name="tuoi"> <br><br>
-    <button type="submit">Send</button>
-    <h1>@ViewBag.thongBao</h1>
-
+<form asp-action="Index" method="post">
+    <label>Nhập vào số thứ nhất: </label>
+    <input type="text" placeholder="Nhập số thứ nhất" name="number1"> </br> </br>
+    <label>Nhập vào số thứ hai:</label>
+    <input type="text" placeholder="Nhập số thứ hai" name="number2"> <br><br>
+    <button type="submit">Gửi</button>
+    <h3>@ViewBag.differenceResult</h3>
+    <h3>@ViewBag.productResult</h3>
+    <h3>@ViewBag.quotientResult</h3>
+    <h3>@ViewBag.remainderResult</h3>
 </form>
+//Tran Thi Kim Dung - 2021050135
