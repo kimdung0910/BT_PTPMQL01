@@ -4,7 +4,7 @@ namespace DemoMVC.Models
     public class Student
     {
         public string StudentId { get; set; }
-        public string Major { get; set; }
-        public int Year { get; set; }
+        public string FullName { get; set; }
+        public string StudentName { get; internal set; }
     }
 }
