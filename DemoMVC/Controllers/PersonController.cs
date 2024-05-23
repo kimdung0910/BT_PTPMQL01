@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using DemoMVC.Data;
 using DemoMVC.Models;
 using DemoMVC.Models.Process;
-
+using OfficeOpenXml;
 namespace DemoMVC.Controllers
 {
     public class PersonController : Controller
@@ -14,7 +14,32 @@ namespace DemoMVC.Controllers
         {
             _context = context;
         }
+    public IActionResult Download()
+    {
+    // Đặt tên file khi tải xuống
+    var fileName = "DownloadFile" + ".xlsx";
+    using (ExcelPackage excelPackage = new ExcelPackage())
+    {
+        ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+        // Thêm một số nội dung vào ô A1
+        worksheet.Cells["A1"].Value = "PersonID";
+        worksheet.Cells["B1"].Value = "FullName";
+        worksheet.Cells["C1"].Value = "Address";
+        worksheet.Cells["D1"].Value = "Age";
 
+
+        // Lấy tất cả Person
+        var personList = _context.Person.ToList();
+
+        // Điền dữ liệu vào worksheet
+        worksheet.Cells["A2"].LoadFromCollection(personList);
+
+        var stream = new MemoryStream(excelPackage.GetAsByteArray());
+
+        // Tải file xuống
+        return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+    }
+    }
         public async Task<IActionResult>Upload(){
             return View();
         }
@@ -44,7 +69,8 @@ namespace DemoMVC.Controllers
                             ps.PersonId = dt.Rows[i][0].ToString();
                             ps.FullName = dt.Rows[i][1].ToString();
                             ps.Address = dt.Rows[i][2].ToString();
-                            
+                            ps.Age = Convert.ToInt16(dt.Rows[i][3].ToString());
+
                             _context.Add(ps);
                         }
                         await _context.SaveChangesAsync();
