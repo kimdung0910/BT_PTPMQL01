@@ -1,47 +1,66 @@
-@model IEnumerable<DemoMVC.Models.Person>
+@model IPagedList<DemoMVC.Models.Person>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="w3-container w3-teal">Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
-    <a class="btn btn-success" asp-action="Dowload">Dowload</a>
+    <a asp-action="Create" class="w3-button w3-black w3-container w3-margin">Create New</a>
 </p>
-<table class="table">
-    <thead>
+
+<table class="w3-table">
+    <thead class="w3-border">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Age)
-            </th>
+            <th>@Html.DisplayNameFor(model => model.First().FullName)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Address)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Age)</th>
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="w3-border">
         @foreach (var item in Model)
         {
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                <td>@Html.DisplayFor(modelItem => item.Age)</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FullName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Age)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.PersonId" class="w3-button w3-black w3-container w3-margin">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PersonId" class="w3-button w3-black w3-container w3-margin">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<hr />
+
+@using (Html.BeginForm("Index", "Person", FormMethod.Get, new { id = "form1" }))
+{
+    <div class="row">
+        <div class="col-md-11">
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, pageSize = ViewBag.psize }), 
+            new PagedListRenderOptions
+            {
+                LiElementClasses = new[] { "page-item" },
+                PageClasses = new[] { "page-link" }
+            })
+        </div>
+        <div class="col-md-1">
+            @Html.DropDownList("pageSize", (SelectList)ViewBag.PageSizeList, new { @class = "form-select" })
+        </div>
+    </div>
+}
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#pageSize").change(function () {
+            $("#form1").submit();
+        });
+    });
+</script>
